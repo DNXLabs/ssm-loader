@@ -25,7 +25,7 @@ def cli():
 
 @cli.command()
 @click.argument('path')
-@click.option('-o', '--output', default='env.json', help='Name to the output JSON file.')
+@click.option('-o', '--output', default='.env.ssm.json', help='Name to the output JSON file.')
 def dump(path: str, output: str):
     """Get all cataloged credentials and save it on a file."""
     next_token = ''
@@ -42,21 +42,23 @@ def dump(path: str, output: str):
         response = ssm_client.get_parameters_by_path(**extra_args)
         if response['ResponseMetadata']['HTTPStatusCode'] != 200:
             exit(1)
-            
+
         parameters = parameters + response['Parameters']
-        
+
         if not 'NextToken' in response:
             break
-        
+
         extra_args['NextToken'] = response['NextToken']
 
     data['parameters'] = parameters
+
+    print(json.dumps(data, indent=4, sort_keys=True, default=str))
 
     with open(output, 'w') as outfile:
         json.dump(data, outfile, indent=4, sort_keys=True, default=str)
 
 
-@click.option('-f', '--file', default='env.json', help='Name to the JSON file.')
+@click.option('-f', '--file', default='.env.ssm.json', help='Name to the JSON file.')
 @cli.command()
 def load(file: str):
     """Load all cataloged credentials from a file and update the SSM client."""
