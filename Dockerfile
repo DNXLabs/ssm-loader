@@ -12,4 +12,6 @@ ADD . .
 
 RUN pip install --editable .
 
-CMD [ "/bin/bash" ]
+ENTRYPOINT [ "ssm" ]
+
+CMD [ "--help" ]
