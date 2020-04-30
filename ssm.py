@@ -69,7 +69,7 @@ def load(file: str):
                 'Name': param['Name'],
                 'Value': param['Value'],
                 'Overwrite': True,
-                'Type': "String",
+                'Type': param['Type'],
                 'Tier': "Intelligent-Tiering"
             }
             response = ssm_client.put_parameter(**args)
