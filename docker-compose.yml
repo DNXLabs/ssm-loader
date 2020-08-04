@@ -1,0 +1,10 @@
+version: "3.4"
+
+services:
+  ssm-loader:
+    container_name: ssm-loader
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - .:/usr/src/ssm
