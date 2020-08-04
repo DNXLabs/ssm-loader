@@ -55,8 +55,31 @@ docker run -rm \
     ssm load -f ssm.json
 ```
 
+## Setup development environment
+
+#### Install dependencies
+
+```bash
+make build
+```
+
+#### Run
+```bash
+make run
+```
+
+#### Test
+```bash
+make test
+```
+
+#### Lint Flake8
+```bash
+make flake8
+```
+
 ## Author
-App managed by DNX Solutions.
+App managed by [DNX Solutions](https://github.com/DNXLabs).
 
 ## License
-Apache 2 Licensed. See LICENSE for full details.
+Apache 2 Licensed. See [LICENSE](https://github.com/DNXLabs/ssm-loader/blob/master/LICENSE) for full details.
