@@ -1,3 +1,4 @@
 .env
 __pycache__/
 ssm_loader.egg-info
+.pytest_cache
