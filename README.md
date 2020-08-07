@@ -1,6 +1,9 @@
 # ssm-loader
 
+![Build](https://github.com/DNXLabs/ssm-loader/workflows/Build/badge.svg)
 [![codecov.io](https://codecov.io/gh/DNXLabs/ssm-loader/coverage.svg?branch=master)](https://codecov.io/gh/DNXLabs/ssm-loader?branch=master)
+[![PyPI](https://badge.fury.io/py/ssm-loader.svg)](https://pypi.python.org/pypi/ssm-loader/)
+[![LICENSE](https://img.shields.io/github/license/DNXLabs/ssm-loader)](https://github.com/DNXLabs/ssm-loader/blob/master/LICENSE)
 
 This project aims to help dump and load AWS SSM parameters.
 
