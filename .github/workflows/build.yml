@@ -28,4 +28,12 @@ jobs:
         flake8 . --count --max-complexity=10 --exclude .git,__pycache__,build,dist,tests --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        python -m pytest -vv tests/
+        python -m pytest -vv --cov-report=xml --cov=ssm tests/
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        name: ssm-loader
+        file: ./coverage.xml
+        flags: unittests
+        env_vars: OS,PYTHON
+        fail_ci_if_error: true

@@ -1,4 +1,7 @@
-# SSM
+# ssm-loader
+
+[![codecov.io](https://codecov.io/gh/DNXLabs/ssm-loader/coverage.svg?branch=master)](https://codecov.io/gh/DNXLabs/ssm-loader?branch=master)
+
 This project aims to help dump and load AWS SSM parameters.
 
 

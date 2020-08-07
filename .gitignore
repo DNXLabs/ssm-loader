@@ -1,4 +1,13 @@
+# Virtual Environment
 .env
+
+# Python
 __pycache__/
 ssm_loader.egg-info
+
+# Pytest
 .pytest_cache
+
+# Coverage
+coverage.xml
+.coverage
