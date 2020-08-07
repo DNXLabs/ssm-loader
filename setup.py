@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
+from ssm import __version__
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -14,7 +15,7 @@ install_requires = [
 
 setup(
     name='ssm-loader',
-    version='0.2.0',
+    version=__version__,
     py_modules=['ssm'],
     include_package_data=True,
     description='Python app to load SSM',
