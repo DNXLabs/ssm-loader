@@ -11,9 +11,8 @@ clean:
 	find -iname "__pycache__" -delete
 
 
-
 run:
-	docker run --rm -v $(pwd):/usr/src/ssm ssm-loader $(filter-out $@,$(MAKECMDGOALS))
+	docker-compose run --rm ssm-loader $(filter-out $@,$(MAKECMDGOALS))
 
 
 test:

@@ -41,6 +41,19 @@ setup(
     install_requires=install_requires,
     python_requires='>=3.6',
     entry_points={
-        "console_scripts": ["ssm=ssm.cli:main"],
+        'console_scripts': ['ssm=ssm.cli:main']
     },
+    extras_require={
+        'test': [
+            'moto==1.3.13',
+            'pytest==6.0.1',
+            'pytest-cov==2.10.0',
+            'flake8==3.8.3'
+        ],
+        'build': [
+            'twine',
+            'setuptools',
+            'wheel'
+        ],
+    }
 )
