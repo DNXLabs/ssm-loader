@@ -1,0 +1,6 @@
+[run]
+source = ssm
+omit = */test/test*,*tests*
+
+[report]
+omit = */test/test*,*tests*
