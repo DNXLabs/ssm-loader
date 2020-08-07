@@ -17,7 +17,7 @@ run:
 
 
 test:
-	docker-compose run --rm --entrypoint "" ssm-loader python3 -m pytest -vv tests/
+	docker-compose run --rm --entrypoint "" ssm-loader python3 -m pytest -vv --cov-report=xml --cov=ssm tests/
 
 
 flake8:
