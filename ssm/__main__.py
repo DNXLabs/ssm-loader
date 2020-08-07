@@ -1,5 +1,3 @@
-from ssm.cli import cli
+from ssm.cli import main  # pragma: no cover
 
-
-def main():
-    cli()
+main()  # pragma: no cover

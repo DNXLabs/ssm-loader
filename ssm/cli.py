@@ -78,5 +78,5 @@ def load(file: str):
         exit(1)
 
 
-if __name__ == "__main__":
+def main():
     cli()
