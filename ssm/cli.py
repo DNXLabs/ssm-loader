@@ -1,13 +1,14 @@
 import click
 import json
 from ssm.aws import ssm_client
-from ssm.color import color
+from ssm.utils import print_ok_ssm_load
+from ssm.utils import print_error_ssm_load
 
 
 @click.group()
 def cli():
     """A CLI wrapper for the SSM."""
-    pass
+    pass  # pragma: no cover
 
 
 @cli.command()
@@ -65,18 +66,18 @@ def load(file: str):
                     'Value': param['Value'],
                     'Overwrite': True,
                     'Type': param['Type'],
-                    'Tier': "Intelligent-Tiering"
+                    'Tier': 'Intelligent-Tiering'
                 }
                 response = ssm_client.put_parameter(**args)
                 if response['ResponseMetadata']['HTTPStatusCode'] != 200:
-                    click.echo(param['Name'] + color.FAIL + ' FAIL' + color.ENDC, err=True)
+                    print_error_ssm_load(param['Name'])
                     exit(1)
                 else:
-                    click.echo(param['Name'] + color.OK + ' OK' + color.ENDC)
+                    print_ok_ssm_load(param['Name'])
     except BaseException:
         click.echo('No such file named ' + file + ' in directory.', err=True)
         exit(1)
 
 
-def main():
+def main():  # pragma: no cover
     cli()
