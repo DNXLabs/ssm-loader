@@ -76,11 +76,3 @@ def ssm_parameters():
         ]
     }
     return json.dumps(result, indent=4, sort_keys=True, default=str) + '\n'
-
-
-@pytest.fixture
-def ssm_empty_parameters_json_file():
-    result = {
-        "parameters": []
-    }
-    return json.dumps(result, indent=4, sort_keys=True, default=str) + '\n'
