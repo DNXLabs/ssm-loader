@@ -19,7 +19,7 @@ def dump(path: str, output: str):
     parameters = []
     extra_args = {
         'Path': path,
-        'Recursive': False,
+        'Recursive': True,
         'WithDecryption': True,
         'MaxResults': 2
     }
