@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 
 install_requires = [
-    'awscli==1.18.111',
+    'awscli==1.44.38',
     'boto3==1.14.34',
     'click==7.1.2'
 ]
